@@ -14,7 +14,6 @@ public class BasicEnemy : MonoBehaviour
     [SerializeField] float speedIncrease;
     float currentSpeed;
     
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -22,7 +21,6 @@ public class BasicEnemy : MonoBehaviour
         currentSpeed = agent.speed;
     }
 
-    // Update is called once per frame
     void Update()
     {
         agent.SetDestination(player.transform.position);
@@ -41,7 +39,7 @@ public class BasicEnemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && player != null)
         {
-            //SceneManager.LoadScene(0);
+            SceneManager.LoadScene(0);
         }
     }
 }
