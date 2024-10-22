@@ -13,19 +13,25 @@ public class MemoryForce : MonoBehaviour
     bool handOccupied;
     bool isRecalling;
     GameObject objectToRecall;
+    Recallable recallableObject;
     [SerializeField] float recallSpeed;
 
+    Collider[] colliders;
     float fistValue;
     
     public void RecallObject()
     {
         if(objectToRecall is null) return;
+        recallableObject = objectToRecall.GetComponent<Recallable>();
         if(handOccupied) return;
-        if(!objectToRecall.GetComponent<Recallable>().isRecallable) return;
-        if(objectToRecall.GetComponent<Recallable>().isHeld) return;
+        if(!recallableObject.isRecallable) return;
+        if(recallableObject.isHeld) return;
         print("TEST");
         isRecalling = true;
-        objectToRecall.GetComponent<Collider>().isTrigger = true;
+        foreach (var col in recallableObject.colliders)
+        {
+            col.isTrigger = true;
+        }
         objectToRecall.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         var speed = recallSpeed * Time.deltaTime;
         var objectToRecallPos = objectToRecall.transform.position;
@@ -45,7 +51,11 @@ public class MemoryForce : MonoBehaviour
         {
             if(!objectToRecall) return;
             if(!isRecalling) return;
-            objectToRecall.GetComponent<Collider>().isTrigger = false;
+            recallableObject = objectToRecall.GetComponent<Recallable>();
+            foreach (var col in recallableObject.colliders)
+            {
+                col.isTrigger = false;
+            }
             isRecalling = false;
         }
             
@@ -55,7 +65,11 @@ public class MemoryForce : MonoBehaviour
     {
         if (other.gameObject == objectToRecall)
         {
-            objectToRecall.GetComponent<Collider>().isTrigger = false;
+            recallableObject = objectToRecall.GetComponent<Recallable>();
+            foreach (var col in recallableObject.colliders)
+            {
+                col.isTrigger = false;
+            }
             handOccupied = true;
         }
     }
@@ -64,7 +78,11 @@ public class MemoryForce : MonoBehaviour
     {
         if (other.gameObject == objectToRecall)
         {
-            objectToRecall.GetComponent<Collider>().isTrigger = false;
+            recallableObject = objectToRecall.GetComponent<Recallable>();
+            foreach (var col in recallableObject.colliders)
+            {
+                col.isTrigger = false;
+            }
             handOccupied = false;
         }
     }
