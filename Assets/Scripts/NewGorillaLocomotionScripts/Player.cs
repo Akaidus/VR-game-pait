@@ -6,7 +6,10 @@
     {
         private static Player _instance;
 
-        public static Player Instance { get { return _instance; } }
+        public static Player Instance
+        {
+            get { return _instance; }
+        }
 
         public SphereCollider headCollider;
         public CapsuleCollider bodyCollider;
