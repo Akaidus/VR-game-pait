@@ -14,7 +14,7 @@ public class Bounceable : MonoBehaviour
     float movementThreshold = 0.005f;
     [SerializeField] float bounceDamping;
     
-    [SerializeField] bool isCaptureDevice;
+    [SerializeField] public bool isCaptureDevice;
     GameObject capturedObject;
     bool containsCapture;
     void Start()
@@ -35,27 +35,29 @@ public class Bounceable : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
     }
-
-    void AttemptCapture(GameObject obj)
+    
+    void PerformCapture(GameObject obj)
     {
         if (obj.gameObject.GetComponent<Captureable>() && !containsCapture)
         {
-            containsCapture = true;
             capturedObject = obj.gameObject;
-            obj.gameObject.GetComponent<Captureable>().isCaptured = true;
+            obj.gameObject.GetComponent<Captureable>().isBeingCaptured = true;
+            containsCapture = true;
         }
         else
         {
-            print("capture no work");
+            print("capture failed / unable to catch");
         }
     }
+    
     public void SummonCapture()
     {
         if (capturedObject != null)
         {
-            GameObject summonedCapture = Instantiate(capturedObject, transform.position, Quaternion.identity);
-            Destroy(capturedObject);
-            summonedCapture.GetComponent<Captureable>().Summon();
+            transform.DetachChildren();
+            capturedObject.transform.rotation = Quaternion.Euler(0,0,0);
+            capturedObject.GetComponent<Captureable>().Summon();
+            capturedObject.GetComponent<Collider>().enabled = false;
             containsCapture = false;
             capturedObject = null;
         }
@@ -71,9 +73,10 @@ public class Bounceable : MonoBehaviour
         audioSource.Play();
         if (isCaptureDevice && capturedObject == null)
         {
-            AttemptCapture(collision.gameObject);
+            PerformCapture(collision.gameObject);
         }
         Vector3 bounceDirection = Vector3.Reflect(-collision.relativeVelocity, collision.GetContact(0).normal);
         rb.velocity = bounceDirection * bounceDamping;
     }
+
 }

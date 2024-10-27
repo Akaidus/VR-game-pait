@@ -6621,6 +6621,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 196036501854623498, guid: 94aaa87e38639204fa407065cd1225df,
         type: 3}
+      propertyPath: bounceDamping
+      value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 196036501854623498, guid: 94aaa87e38639204fa407065cd1225df,
+        type: 3}
       propertyPath: isCaptureDevice
       value: 1
       objectReference: {fileID: 0}
@@ -6678,6 +6683,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: V_pingpong ball 3 (capture)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146242269506393851, guid: 94aaa87e38639204fa407065cd1225df,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
