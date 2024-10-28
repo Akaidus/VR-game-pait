@@ -20,11 +20,11 @@
         public Transform rightHandTransform;
         public Transform leftHandTransform;
 
-        private Vector3 lastLeftHandPosition;
-        private Vector3 lastRightHandPosition;
-        private Vector3 lastHeadPosition;
+        Vector3 lastLeftHandPosition;
+        Vector3 lastRightHandPosition;
+        Vector3 lastHeadPosition;
 
-        private Rigidbody playerRigidBody;
+        Rigidbody playerRigidBody;
 
         public int velocityHistorySize;
         public float maxArmLength = 1.5f;
@@ -37,12 +37,12 @@
         public float defaultSlideFactor = 0.03f;
         public float defaultPrecision = 0.995f;
 
-        private Vector3[] velocityHistory;
-        private int velocityIndex;
-        private Vector3 currentVelocity;
-        private Vector3 denormalizedVelocityAverage;
-        private bool jumpHandIsLeft;
-        private Vector3 lastPosition;
+        Vector3[] velocityHistory;
+        int velocityIndex;
+        Vector3 currentVelocity;
+        Vector3 denormalizedVelocityAverage;
+        bool jumpHandIsLeft;
+        Vector3 lastPosition;
 
         public Vector3 rightHandOffset;
         public Vector3 leftHandOffset;
@@ -54,7 +54,7 @@
 
         public bool disableMovement = false;
 
-        private void Awake()
+        void Awake()
         {
             if (_instance != null && _instance != this)
             {
@@ -78,7 +78,7 @@
             lastPosition = transform.position;
         }
 
-        private Vector3 CurrentLeftHandPosition()
+        Vector3 CurrentLeftHandPosition()
         {
             if ((PositionWithOffset(leftHandTransform, leftHandOffset) - headCollider.transform.position).magnitude < maxArmLength)
             {
@@ -90,7 +90,7 @@
             }
         }
 
-        private Vector3 CurrentRightHandPosition()
+        Vector3 CurrentRightHandPosition()
         {
             if ((PositionWithOffset(rightHandTransform, rightHandOffset) - headCollider.transform.position).magnitude < maxArmLength)
             {
@@ -102,12 +102,12 @@
             }
         }
 
-        private Vector3 PositionWithOffset(Transform transformToModify, Vector3 offsetVector)
+        Vector3 PositionWithOffset(Transform transformToModify, Vector3 offsetVector)
         {
             return transformToModify.position + transformToModify.rotation * offsetVector;
         }
 
-        private void Update()
+        void Update()
         {
             bool leftHandColliding = false;
             bool rightHandColliding = false;
@@ -253,12 +253,15 @@
 
             leftHandFollower.position = lastLeftHandPosition;
             rightHandFollower.position = lastRightHandPosition;
-
+            
+            leftHandFollower.rotation = leftHandTransform.rotation;
+            rightHandFollower.rotation = rightHandTransform.rotation;
+            
             wasLeftHandTouching = leftHandColliding;
             wasRightHandTouching = rightHandColliding;
         }
 
-        private bool IterativeCollisionSphereCast(Vector3 startPosition, float sphereRadius, Vector3 movementVector, float precision, out Vector3 endPosition, bool singleHand)
+        bool IterativeCollisionSphereCast(Vector3 startPosition, float sphereRadius, Vector3 movementVector, float precision, out Vector3 endPosition, bool singleHand)
         {
             RaycastHit hitInfo;
             Vector3 movementToProjectedAboveCollisionPlane;
@@ -304,7 +307,7 @@
             }
         }
 
-        private bool CollisionsSphereCast(Vector3 startPosition, float sphereRadius, Vector3 movementVector, float precision, out Vector3 finalPosition, out RaycastHit hitInfo)
+        bool CollisionsSphereCast(Vector3 startPosition, float sphereRadius, Vector3 movementVector, float precision, out Vector3 finalPosition, out RaycastHit hitInfo)
         {
             //kind of like a souped up spherecast. includes checks to make sure that the sphere we're using, if it touches a surface, is pushed away the correct distance (the original sphereradius distance). since you might
             //be pushing into sharp corners, this might not always be valid, so that's what the extra checks are for
@@ -366,7 +369,7 @@
             }
         }
 
-        private void StoreVelocities()
+        void StoreVelocities()
         {
             velocityIndex = (velocityIndex + 1) % velocityHistorySize;
             Vector3 oldestVelocity = velocityHistory[velocityIndex];

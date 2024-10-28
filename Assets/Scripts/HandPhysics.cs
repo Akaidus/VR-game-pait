@@ -1,18 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class HandPhysics : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool handTouching;
+    [SerializeField] HandPhysics otherHand;
+
+    ConfigurableJoint joint;
+    float initialYDrive;
+    [SerializeField] float boostedYDrive;
     void Start()
     {
-        
+        joint = GetComponent<ConfigurableJoint>();
+        initialYDrive = joint.yDrive.positionSpring;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (handTouching && otherHand.handTouching)
+        {
+            //joint.yDrive.positionSpring = boostedYDrive;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        handTouching = true;
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        handTouching = false;
     }
 }

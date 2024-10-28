@@ -17,6 +17,7 @@ public class Bounceable : MonoBehaviour
     [SerializeField] public bool isCaptureDevice;
     GameObject capturedObject;
     bool containsCapture;
+    [SerializeField] GameObject captureSpawnPoint;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -41,7 +42,7 @@ public class Bounceable : MonoBehaviour
         if (obj.gameObject.GetComponent<Captureable>() && !containsCapture)
         {
             capturedObject = obj.gameObject;
-            obj.gameObject.GetComponent<Captureable>().isBeingCaptured = true;
+            obj.gameObject.GetComponent<Captureable>().StartShrink();
             containsCapture = true;
         }
         else
@@ -54,6 +55,7 @@ public class Bounceable : MonoBehaviour
     {
         if (capturedObject != null)
         {
+            //RaycastCaptureSpawnPoint();
             transform.DetachChildren();
             capturedObject.transform.rotation = Quaternion.Euler(0,0,0);
             capturedObject.GetComponent<Captureable>().Summon();
@@ -79,4 +81,14 @@ public class Bounceable : MonoBehaviour
         rb.velocity = bounceDirection * bounceDamping;
     }
 
+    void RaycastCaptureSpawnPoint()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(captureSpawnPoint.transform.position, Vector3.down, out hit))
+        {
+            capturedObject.transform.position = hit.point;
+            var objectHeight = capturedObject.GetComponent<Renderer>().bounds.extents.y;
+            capturedObject.transform.position = new Vector3(hit.point.x, hit.point.y + objectHeight, hit.point.z);
+        }
+    }
 }

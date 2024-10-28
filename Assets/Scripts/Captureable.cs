@@ -1,11 +1,12 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Captureable : MonoBehaviour
 {
-    public GameObject prefab;
-    Vector3 originalSize = new(1, 1, 1), newSize = new(0, 0, 0);
+    Rigidbody rb;
+    Vector3 originalSize, shrunkSize = new(0, 0, 0);
     float sizeDuration, moveDuration;
     float sizeMultiplier = 4f, moveMultiplier = 0.9f;
     [HideInInspector] public bool isBeingCaptured;
@@ -16,7 +17,8 @@ public class Captureable : MonoBehaviour
     void Start()
     {
         collider = GetComponent<Collider>();
-        prefab = transform.gameObject;
+        rb = GetComponent<Rigidbody>();
+        originalSize = transform.localScale;
     }
 
     void Update()
@@ -33,30 +35,36 @@ public class Captureable : MonoBehaviour
         }
     }
 
-    void Shrink()
+    public void StartShrink()
     {
         collider.enabled = false;
+        isBeingCaptured = true;
+    }
+    
+    void Shrink()
+    {
         sizeDuration += Time.deltaTime * sizeMultiplier;
         moveDuration += Time.deltaTime * moveMultiplier;
-        transform.localScale = Vector3.Lerp(originalSize,newSize, sizeDuration);
+        transform.localScale = Vector3.Lerp(originalSize,shrunkSize, sizeDuration);
         transform.position = Vector3.MoveTowards(transform.position,myBall.transform.position, moveDuration);
-        if (transform.localScale != newSize) return;
+        if (transform.localScale != shrunkSize) return;
         print("fully shrunk");
+        rb.isKinematic = true;
         transform.parent = myBall.transform;
         isBeingCaptured = false;
     }
 
     void Expand()
     {
-        isBeingSummoned = true;
         sizeDuration += Time.deltaTime * sizeMultiplier;
         moveDuration += Time.deltaTime * moveMultiplier;
-        transform.localScale = Vector3.Lerp(newSize, originalSize, sizeDuration);
+        rb.AddForce(0, 8, 5);
+        transform.localScale = Vector3.Lerp(shrunkSize, originalSize, sizeDuration);
         if (transform.localScale != originalSize) return;
         print("fully expanded");
+        collider.enabled = true;
         sizeDuration = 0;        
         moveDuration = 0;
-        collider.enabled = true;
         myBall = null;
         isBeingSummoned = false;
     }
@@ -65,14 +73,15 @@ public class Captureable : MonoBehaviour
     {
         sizeDuration = 0;        
         moveDuration = 0;
-        transform.localScale = newSize;
-        transform.Translate(0,2,1);
-        var delay = 0.1f;
-        Invoke(nameof(Expand), delay);
+        transform.localScale = shrunkSize;
+        rb.freezeRotation = true;
+        rb.isKinematic = false;
+        isBeingSummoned = true;
     }
 
     void OnCollisionEnter(Collision collision)
     {
+        rb.freezeRotation = false;
         if (collision.gameObject.GetComponent<Bounceable>() == null) return;
         if (collision.gameObject.GetComponent<Bounceable>().isCaptureDevice)
         {
