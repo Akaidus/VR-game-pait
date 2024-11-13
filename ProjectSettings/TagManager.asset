@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PingPongBall
+  - HammerHead
   layers:
   - Default
   - TransparentFX

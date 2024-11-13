@@ -56,13 +56,13 @@ public class Captureable : MonoBehaviour
 
     void Expand()
     {
+        collider.enabled = true;
         sizeDuration += Time.deltaTime * sizeMultiplier;
         moveDuration += Time.deltaTime * moveMultiplier;
         rb.AddForce(0, 8, 5);
         transform.localScale = Vector3.Lerp(shrunkSize, originalSize, sizeDuration);
         if (transform.localScale != originalSize) return;
         print("fully expanded");
-        collider.enabled = true;
         sizeDuration = 0;        
         moveDuration = 0;
         myBall = null;

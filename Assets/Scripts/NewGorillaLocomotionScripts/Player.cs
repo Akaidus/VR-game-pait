@@ -4,7 +4,7 @@
 
     public class Player : MonoBehaviour
     {
-        private static Player _instance;
+        static Player _instance;
 
         public static Player Instance
         {
@@ -47,6 +47,9 @@
         public Vector3 rightHandOffset;
         public Vector3 leftHandOffset;
 
+        [SerializeField] Vector3 rightHandRotationOffset;
+        [SerializeField] Vector3 leftHandRotationOffset;
+        
         public LayerMask locomotionEnabledLayers;
 
         public bool wasLeftHandTouching;
@@ -185,7 +188,7 @@
 
             if (rigidBodyMovement != Vector3.zero)
             {
-                transform.position = transform.position + rigidBodyMovement;
+                transform.position += rigidBodyMovement;
             }
 
             lastHeadPosition = headCollider.transform.position;
@@ -253,9 +256,8 @@
 
             leftHandFollower.position = lastLeftHandPosition;
             rightHandFollower.position = lastRightHandPosition;
-            
-            leftHandFollower.rotation = leftHandTransform.rotation;
-            rightHandFollower.rotation = rightHandTransform.rotation;
+            leftHandFollower.rotation = leftHandTransform.rotation * Quaternion.Euler(leftHandRotationOffset);
+            rightHandFollower.rotation = rightHandTransform.rotation * Quaternion.Euler(rightHandRotationOffset);
             
             wasLeftHandTouching = leftHandColliding;
             wasRightHandTouching = rightHandColliding;
@@ -349,14 +351,7 @@
 
         public bool IsHandTouching(bool forLeftHand)
         {
-            if (forLeftHand)
-            {
-                return wasLeftHandTouching;
-            }
-            else
-            {
-                return wasRightHandTouching;
-            }
+            return forLeftHand ? wasLeftHandTouching : wasRightHandTouching;
         }
 
         public void Turn(float degrees)
