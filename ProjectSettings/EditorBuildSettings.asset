@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: 1108e3b8ab40e8347b9a47b296cf1c31
+    path: Assets/Scenes/Armswing.unity
+    guid: f0fa99adc299a2a408e50ad31f957d88
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9922f8935409ee643b33d1d6fbcc97e1,
       type: 2}

@@ -40,7 +40,7 @@ public class Bounceable : MonoBehaviour
         if (obj.gameObject.GetComponent<Captureable>() && !containsCapture)
         {
             audioSource.volume = .5f;
-            audioSource.PlayOneShot((AudioClip)Resources.Load("Sound/Pokeball/Pokeball return SFX"));
+            audioSource.PlayOneShot((AudioClip)Resources.Load("Audio/Pokeball/Pokeball return SFX"));
             readyToCapture = false;
             capturedObject = obj.gameObject;
             obj.gameObject.GetComponent<Captureable>().StartShrink();
@@ -60,12 +60,12 @@ public class Bounceable : MonoBehaviour
             if (!readyToCapture)
             {
                 readyToCapture = true;
-                audioSource.PlayOneShot((AudioClip)Resources.Load("Sound/Pokeball/Pokeball enlarge SFX"));
+                audioSource.PlayOneShot((AudioClip)Resources.Load("Audio/Pokeball/Pokeball enlarge SFX"));
             }
             else if(readyToCapture)
             {
                 readyToCapture = false;
-                audioSource.PlayOneShot((AudioClip)Resources.Load("Sound/Pokeball/Pokeball shrink SFX"));
+                audioSource.PlayOneShot((AudioClip)Resources.Load("Audio/Pokeball/Pokeball shrink SFX"));
             }
             print("no capture contained");
         }
@@ -76,13 +76,13 @@ public class Bounceable : MonoBehaviour
             {
                 readyToSummon = true;
                 audioSource.volume = 1;
-                audioSource.PlayOneShot((AudioClip)Resources.Load("Sound/Pokeball/Pokeball enlarge SFX"));
+                audioSource.PlayOneShot((AudioClip)Resources.Load("Audio/Pokeball/Pokeball enlarge SFX"));
             }
             else if(readyToSummon)
             {
                 readyToSummon = false;
                 audioSource.volume = 1;
-                audioSource.PlayOneShot((AudioClip)Resources.Load("Sound/Pokeball/Pokeball shrink SFX"));
+                audioSource.PlayOneShot((AudioClip)Resources.Load("Audio/Pokeball/Pokeball shrink SFX"));
             }
         }
     }
