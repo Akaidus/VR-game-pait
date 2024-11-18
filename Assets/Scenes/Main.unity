@@ -9573,6 +9573,67 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506450129}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1509000307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7838604029455857141, guid: 72a2d629328be994e8ab9d28e4eb851b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3882015411057822898}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1509000310 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6468718525977017187, guid: 72a2d629328be994e8ab9d28e4eb851b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3882015411057822898}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509000307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a5df2202a8b96488c744be3bd0c33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1509000313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509000307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2213c36610e3b1c4bbf886810ed9db12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_System: {fileID: 1509000310}
+  m_TurnAmount: 45
+  m_DebounceTime: 0.5
+  m_EnableTurnLeftRight: 1
+  m_EnableTurnAround: 0
+  m_DelayTime: 0.1
+  m_LeftHandSnapTurnAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Left Hand Snap Turn
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: ba7ecf45-2588-4327-a059-c44c36b07010
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_RightHandSnapTurnAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Hand Snap Turn
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: 1deb68f1-f927-4b77-825e-b2f7f13344be
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -8525429354371678379, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &1513515018
 GameObject:
   m_ObjectHideFlags: 0
@@ -14908,10 +14969,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1799324283595947828, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4711678396494051874, guid: 72a2d629328be994e8ab9d28e4eb851b,
         type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578698466559670314, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6468718525977017187, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: m_Timeout
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838604029479070239, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: maxArmLength
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838604029479070239, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: unStickDistance
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838604029479070239, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: velocityHistorySize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838604030124814388, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: m_Height
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 8537859166590490572, guid: 72a2d629328be994e8ab9d28e4eb851b,
         type: 3}
@@ -14966,7 +15062,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7838604029455857141, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1509000313}
   m_SourcePrefab: {fileID: 100100000, guid: 72a2d629328be994e8ab9d28e4eb851b, type: 3}
 --- !u!1001 &7737858927473003455
 PrefabInstance:
