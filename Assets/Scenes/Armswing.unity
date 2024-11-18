@@ -1820,15 +1820,40 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5578698466559670314, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5578698466559670314, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6468718525977017187, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: m_Timeout
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838604029479070239, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: maxArmLength
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7838604029479070239, guid: 72a2d629328be994e8ab9d28e4eb851b,
         type: 3}
       propertyPath: maxJumpSpeed
-      value: 30
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7838604029479070239, guid: 72a2d629328be994e8ab9d28e4eb851b,
         type: 3}
       propertyPath: velocityLimit
-      value: 0.1
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838604029479070239, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: jumpMultiplier
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 7838604029479070239, guid: 72a2d629328be994e8ab9d28e4eb851b,
         type: 3}
