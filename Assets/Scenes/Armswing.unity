@@ -1930,10 +1930,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 4711678396494051874, guid: 72a2d629328be994e8ab9d28e4eb851b,
+    - target: {fileID: 7838604029479070239, guid: 72a2d629328be994e8ab9d28e4eb851b,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: maxJumpSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838604029479070239, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: velocityLimit
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838604029479070239, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: unStickDistance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838604029479070304, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7838604029479070304, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8537859166590490572, guid: 72a2d629328be994e8ab9d28e4eb851b,
         type: 3}
