@@ -110,7 +110,7 @@
             return transformToModify.position + transformToModify.rotation * offsetVector;
         }
 
-        void Update()
+        void FixedUpdate()
         {
             bool leftHandColliding = false;
             bool rightHandColliding = false;
