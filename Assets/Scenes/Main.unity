@@ -891,7 +891,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 8e8f89e8de560ff4f84bd334477b8565, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6250,7 +6250,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 737a057723bff094abc7804b533b7187, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8116,6 +8116,11 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.000029528986
       objectReference: {fileID: 0}
+    - target: {fileID: 2901012570538580186, guid: 94aaa87e38639204fa407065cd1225df,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b39d0e11958d904489032c9e5cc559a, type: 2}
     - target: {fileID: 4190765065864056492, guid: 94aaa87e38639204fa407065cd1225df,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8887,7 +8892,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 737a057723bff094abc7804b533b7187, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9538,7 +9543,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 8e8f89e8de560ff4f84bd334477b8565, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14830,6 +14835,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2749358776247523246, guid: 3e2375a11b482ce429a5b0c3c7939825,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 558048064a556ea4ab3476d2dc473684, type: 2}
     - target: {fileID: 3921654378700336321, guid: 3e2375a11b482ce429a5b0c3c7939825,
         type: 3}
       propertyPath: m_LocalPosition.x
