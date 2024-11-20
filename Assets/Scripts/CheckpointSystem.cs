@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CheckpointSystem : MonoBehaviour
 {
+    [SerializeField] Transform player;
     [SerializeField] Vector3 spawnOffset;
     Transform latestCheckpoint;
     
@@ -11,7 +12,7 @@ public class CheckpointSystem : MonoBehaviour
         // Will not run the function if no checkpoint.
         if(latestCheckpoint == null) return;
         // Sets the players position to that of the checkpoint with an offset.
-        transform.position = latestCheckpoint.position + spawnOffset;
+        player.position = latestCheckpoint.position + spawnOffset;
     }
     
     void OnTriggerEnter(Collider other)

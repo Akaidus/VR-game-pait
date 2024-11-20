@@ -40,7 +40,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8537859166590490572}
-  - component: {fileID: 90367302727413701}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -65,19 +64,6 @@ Transform:
   - {fileID: 7838604029455857143}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &90367302727413701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4711678396494051874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2871328f47e01354ca0aed4ecffb7cfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnOffset: {x: 0.5, y: 2, z: 0}
 --- !u!1 &8972073985181327938
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +807,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5200656798002579957}
+    - targetCorrespondingSourceObject: {fileID: 430285557519011101, guid: ce5c2251d70caf148bbad13bb99ebf54,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6098108930574466181}
     - targetCorrespondingSourceObject: {fileID: 430285556866155478, guid: ce5c2251d70caf148bbad13bb99ebf54,
         type: 3}
       insertIndex: -1
@@ -984,6 +974,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7579838251036141312}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7838604029479070237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 430285557519011101, guid: ce5c2251d70caf148bbad13bb99ebf54,
+    type: 3}
+  m_PrefabInstance: {fileID: 7579838251036141312}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6098108930574466181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7838604029479070237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2871328f47e01354ca0aed4ecffb7cfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8537859166590490572}
+  spawnOffset: {x: 0.5, y: 2, z: 0}
 --- !u!1 &7838604029854717052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 430285557680239484, guid: ce5c2251d70caf148bbad13bb99ebf54,
