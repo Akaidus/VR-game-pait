@@ -4,8 +4,8 @@ using UnityEngine;
 public class ThrowableSpawner : MonoBehaviour
 {
     [SerializeField] GameObject throwablePrefab;
+    [SerializeField] Transform spawnPosition;
     Transform playerHand;
-
     GameObject spawnedThrowable;
     // Start is called before the first frame update
     void Start()
@@ -21,17 +21,21 @@ public class ThrowableSpawner : MonoBehaviour
 
     void SpawnThrowable()
     {
-        if(playerHand == null) return;
+        if(spawnPosition == null) return;
         if(spawnedThrowable)
             Destroy(spawnedThrowable);
-        spawnedThrowable = Instantiate(throwablePrefab, playerHand.position, Quaternion.identity);
+        spawnedThrowable = Instantiate(throwablePrefab, spawnPosition.position, Quaternion.identity);
     }
     
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PlayerHand"))
         {
-            playerHand = other.transform;
+            if (spawnPosition == null)
+            {
+                playerHand = other.transform;
+                spawnPosition = playerHand;
+            }
             SpawnThrowable();
         }
     }
