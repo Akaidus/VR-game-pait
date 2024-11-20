@@ -10,16 +10,24 @@ public class CheckpointSystem : MonoBehaviour
     public void RespawnAtLatestCheckpoint()
     {
         // Will not run the function if no checkpoint.
-        if(latestCheckpoint == null) return;
-        // Sets the players position to that of the checkpoint with an offset.
-        player.position = latestCheckpoint.position + spawnOffset;
+        if (latestCheckpoint != null)
+        {
+            // Sets the players position to that of the checkpoint.
+            player.position = latestCheckpoint.position;
+            print("player respawn");
+        }
+        else
+        {
+            print("tp not work");
+        }
     }
     
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Checkpoint"))
         {
-            latestCheckpoint = other.transform;
+            print("checkpoint obtained");
+            latestCheckpoint = other.GetComponent<Checkpoint>().checkpointSpawn;
         }
     }
 }
