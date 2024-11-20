@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PingPongBall
   - HammerHead
+  - PlayerHand
   layers:
   - Default
   - TransparentFX
