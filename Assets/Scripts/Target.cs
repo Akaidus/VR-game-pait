@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Target : MonoBehaviour
@@ -29,11 +30,19 @@ public class Target : MonoBehaviour
         isHit = true;
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Rock"))
+        {
+            TargetHit();
+        }
+    }
+
+    /*void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Rock"))
         {
             TargetHit();
         }
-    }
+    }*/
 }
