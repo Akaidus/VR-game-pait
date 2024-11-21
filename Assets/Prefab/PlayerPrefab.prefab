@@ -303,6 +303,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5266007278563449062, guid: c55f7f3e058ddff42ba7832d6c8af4fa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7035588018974616881, guid: c55f7f3e058ddff42ba7832d6c8af4fa,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -620,7 +625,7 @@ PrefabInstance:
     - target: {fileID: 430285557273465589, guid: ce5c2251d70caf148bbad13bb99ebf54,
         type: 3}
       propertyPath: m_Name
-      value: Player Rig (Gorilla)
+      value: Player XR Rig
       objectReference: {fileID: 0}
     - target: {fileID: 430285557273465589, guid: ce5c2251d70caf148bbad13bb99ebf54,
         type: 3}
@@ -676,6 +681,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430285557519011101, guid: ce5c2251d70caf148bbad13bb99ebf54,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 430285557519011103, guid: ce5c2251d70caf148bbad13bb99ebf54,
         type: 3}
@@ -810,7 +820,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 430285557519011101, guid: ce5c2251d70caf148bbad13bb99ebf54,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6098108930574466181}
+      addedObject: {fileID: 44408432051688542}
     - targetCorrespondingSourceObject: {fileID: 430285556866155478, guid: ce5c2251d70caf148bbad13bb99ebf54,
         type: 3}
       insertIndex: -1
@@ -980,7 +990,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7579838251036141312}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6098108930574466181
+--- !u!114 &44408432051688542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -992,8 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2871328f47e01354ca0aed4ecffb7cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8537859166590490572}
-  spawnOffset: {x: 0.5, y: 2, z: 0}
+  playerPrefab: {fileID: 0}
 --- !u!1 &7838604029854717052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 430285557680239484, guid: ce5c2251d70caf148bbad13bb99ebf54,

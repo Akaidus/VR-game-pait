@@ -37,12 +37,4 @@ public class Target : MonoBehaviour
             TargetHit();
         }
     }
-
-    /*void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Rock"))
-        {
-            TargetHit();
-        }
-    }*/
 }
