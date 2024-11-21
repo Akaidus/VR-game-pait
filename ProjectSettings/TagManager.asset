@@ -8,6 +8,7 @@ TagManager:
   - HammerHead
   - PlayerHand
   - Checkpoint
+  - Rock
   layers:
   - Default
   - TransparentFX

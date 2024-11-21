@@ -4,11 +4,11 @@ using Random = UnityEngine.Random;
 public class Bounceable : MonoBehaviour
 {
     AudioSource audioSource;
-    float minPitch = 0.9f, maxPitch = 1.1f;
+    [SerializeField] float minPitch, maxPitch;
 
     Rigidbody rb;
     float movementThreshold = 0.01f;
-    [SerializeField] float bounceDamping;
+    [SerializeField] float bounceMultiplier;
     
     [SerializeField] public bool isCaptureDevice;
     GameObject capturedObject;
@@ -113,6 +113,6 @@ public class Bounceable : MonoBehaviour
             PerformCapture(collision.gameObject);
         }
         Vector3 bounceDirection = Vector3.Reflect(-collision.relativeVelocity, collision.GetContact(0).normal);
-        rb.velocity = bounceDirection * bounceDamping;
+        rb.velocity = bounceDirection * bounceMultiplier;
     }
 }
