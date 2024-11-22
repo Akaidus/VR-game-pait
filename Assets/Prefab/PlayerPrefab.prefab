@@ -787,6 +787,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 430285557946750770, guid: ce5c2251d70caf148bbad13bb99ebf54,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 430285557946750772, guid: ce5c2251d70caf148bbad13bb99ebf54,
         type: 3}
       propertyPath: m_Height
@@ -817,10 +822,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5200656798002579957}
-    - targetCorrespondingSourceObject: {fileID: 430285557519011101, guid: ce5c2251d70caf148bbad13bb99ebf54,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 44408432051688542}
     - targetCorrespondingSourceObject: {fileID: 430285556866155478, guid: ce5c2251d70caf148bbad13bb99ebf54,
         type: 3}
       insertIndex: -1
@@ -984,27 +985,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7579838251036141312}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7838604029479070237 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 430285557519011101, guid: ce5c2251d70caf148bbad13bb99ebf54,
-    type: 3}
-  m_PrefabInstance: {fileID: 7579838251036141312}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &44408432051688542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7838604029479070237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2871328f47e01354ca0aed4ecffb7cfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 0}
-  playerXR: {fileID: 0}
-  latestCheckpoint: {fileID: 0}
 --- !u!1 &7838604029854717052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 430285557680239484, guid: ce5c2251d70caf148bbad13bb99ebf54,
@@ -1150,6 +1130,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
+  handOccupied: 0
   recallSpeed: 5
 --- !u!135 &7309851754435064349
 SphereCollider:
@@ -1373,6 +1354,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
+  handOccupied: 0
   recallSpeed: 5
 --- !u!135 &891552619763085291
 SphereCollider:
