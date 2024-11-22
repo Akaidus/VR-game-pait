@@ -25,6 +25,7 @@ public class Target : MonoBehaviour
     {
         if(isHit) return;
         audioSource.Play();
+        targetHitbox.enabled = false;
         targetAlive.SetActive(false);
         targetBroken.SetActive(true);
         isHit = true;
