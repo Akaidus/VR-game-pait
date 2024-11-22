@@ -10,7 +10,7 @@ public class MemoryForce : MonoBehaviour
 {
     [SerializeField] InputActionProperty RecallAction;
 
-    bool handOccupied;
+    [HideInInspector] public bool handOccupied;
     bool isRecalling;
     GameObject objectToRecall;
     Recallable recallableObject;

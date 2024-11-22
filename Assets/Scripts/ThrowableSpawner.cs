@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ThrowableSpawner : MonoBehaviour
@@ -16,10 +17,9 @@ public class ThrowableSpawner : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("PlayerHand"))
-        {
-            playerHand = other.transform;
-            SpawnThrowable();
-        }
+        if(!other.CompareTag("PlayerHand")) return;
+        if(!other.GetComponent<MemoryForce>().handOccupied) return;
+        playerHand = other.transform;
+        SpawnThrowable();
     }
 }

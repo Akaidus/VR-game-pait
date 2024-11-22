@@ -37,7 +37,6 @@ public class TargetHitReward : MonoBehaviour
         {
             DispenseReward();
         }
-        print(hitCount);
     }
 
     void DispenseReward()
