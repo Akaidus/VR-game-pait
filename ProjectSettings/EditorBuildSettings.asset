@@ -6,11 +6,35 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Armswing.unity
-    guid: f0fa99adc299a2a408e50ad31f957d88
+    path: Assets/Scenes/Game Levels/Tutorial.unity
+    guid: 9d95f2325dd463b4ca1fee388d207645
   - enabled: 1
-    path: Assets/Scenes/Armswing_NonTextured.unity
-    guid: ef0ff9f7ff37cee42b648d029374a14d
+    path: Assets/Scenes/Game Levels/Level_1_Easy.unity
+    guid: 4cbaee14a12098c42b9509ffe29e9a6d
+  - enabled: 1
+    path: Assets/Scenes/Game Levels/Level_2_Easy.unity
+    guid: 986e369ec7b27f341b4ef9a4f4a27937
+  - enabled: 1
+    path: Assets/Scenes/Game Levels/Level_3_Easy.unity
+    guid: e14011e8bf30c394ba808c6b9cf2e2bf
+  - enabled: 1
+    path: Assets/Scenes/Game Levels/Level_1_Medium.unity
+    guid: 4f0881eadf9fd314eb2457e3936ab6d1
+  - enabled: 1
+    path: Assets/Scenes/Game Levels/Level_2_Medium.unity
+    guid: 83bee1b4ddef0584a9815f0bfbbf53de
+  - enabled: 1
+    path: Assets/Scenes/Game Levels/Level_3_Medium.unity
+    guid: 8cfa65f1e1bd46e47a210878e6fba11f
+  - enabled: 1
+    path: Assets/Scenes/Game Levels/Level_1_Hard.unity
+    guid: 09095664215666345aef4d1dcfff95e1
+  - enabled: 1
+    path: Assets/Scenes/Game Levels/Level_2_Hard.unity
+    guid: 295ace1ca703bca4ca67cd8d2f0f4110
+  - enabled: 1
+    path: Assets/Scenes/Game Levels/Level_3_Hard.unity
+    guid: e57383af85e7550459928cc2c01924d5
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9922f8935409ee643b33d1d6fbcc97e1,
       type: 2}

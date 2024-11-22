@@ -6,7 +6,7 @@ public class ChangeScene : MonoBehaviour
 {
     int currentSceneIndex;
 
-    void Start()
+    void Awake()
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
@@ -14,6 +14,6 @@ public class ChangeScene : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player") || other.CompareTag("PlayerHand"))
-            SceneManager.LoadScene(currentSceneIndex++);
+            SceneManager.LoadScene(currentSceneIndex+1);
     }
 }
