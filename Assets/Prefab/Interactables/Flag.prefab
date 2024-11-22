@@ -34,7 +34,6 @@ Transform:
   m_Children:
   - {fileID: 8714899395343704214}
   - {fileID: 7107112631401846421}
-  - {fileID: 7244037646614132284}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &3928354009925943284
@@ -72,8 +71,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11dd8aeafc791d44d9ff2f88ae62c703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkpointSpawn: {fileID: 7244037646614132284}
   isCollected: 0
+  flag: {fileID: 8280612923462249978}
+  button: {fileID: 7546526709850676217}
+  newColor: {fileID: 2100000, guid: 058fd36fabded154e89407564d80a596, type: 2}
 --- !u!54 &4121175195198323868
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -101,37 +102,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &7547452514819174468
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7244037646614132284}
-  m_Layer: 7
-  m_Name: CheckpointSpawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7244037646614132284
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7547452514819174468}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7904486038304709275}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7289973426085392766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -282,6 +252,12 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.15, y: 1.8, z: 0.15}
   m_Center: {x: 0, y: 1.11, z: 0}
+--- !u!23 &8280612923462249978 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: a3f0e4d8fbf00401da40f0084bca97e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7289973426085392766}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9185992691228804989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -369,6 +345,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 496494476854227557}
   m_SourcePrefab: {fileID: 100100000, guid: 6eedd3ceb435e4ad48c5b42cc5253b4e, type: 3}
+--- !u!23 &7546526709850676217 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 6eedd3ceb435e4ad48c5b42cc5253b4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 9185992691228804989}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8339077161571465772 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6eedd3ceb435e4ad48c5b42cc5253b4e,

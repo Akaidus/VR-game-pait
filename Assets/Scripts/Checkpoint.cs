@@ -5,15 +5,21 @@ public class Checkpoint : MonoBehaviour
     public bool isCollected;
     [SerializeField] MeshRenderer flag;
     [SerializeField] MeshRenderer button;
-    [SerializeField] Material newFlag;
-    [SerializeField] Material newButton;
+    [SerializeField] Material newColor;
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             print("checkpoint collected");
-            flag.materials[2] = newFlag;
-            button.materials[1] = newButton;
+            Material[] newFlag = flag.materials;
+            Material[] newButton = button.materials;
+
+            newFlag[newFlag.Length - 1] = newColor;
+            newButton[newButton.Length - 1] = newColor;
+
+            flag.materials = newFlag;
+            button.materials = newButton;
+            
             isCollected = true;
         }
     }

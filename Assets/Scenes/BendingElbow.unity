@@ -31177,6 +31177,16 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 058fd36fabded154e89407564d80a596, type: 2}
     - target: {fileID: 6816301285759244311, guid: 4edee6a9448da4eab9867fe2506b8868,
         type: 3}
+      propertyPath: newColor
+      value: 
+      objectReference: {fileID: 2100000, guid: 058fd36fabded154e89407564d80a596, type: 2}
+    - target: {fileID: 6816301285759244311, guid: 4edee6a9448da4eab9867fe2506b8868,
+        type: 3}
+      propertyPath: newButton
+      value: 
+      objectReference: {fileID: 2100000, guid: 058fd36fabded154e89407564d80a596, type: 2}
+    - target: {fileID: 6816301285759244311, guid: 4edee6a9448da4eab9867fe2506b8868,
+        type: 3}
       propertyPath: newbutton
       value: 
       objectReference: {fileID: 2100000, guid: 058fd36fabded154e89407564d80a596, type: 2}
