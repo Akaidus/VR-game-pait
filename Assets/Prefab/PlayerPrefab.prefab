@@ -132,7 +132,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4d8e49b1eb5bb824e95eed5f00052323, type: 2}
+      objectReference: {fileID: 2100000, guid: 03ea2d256bf144dfa907b17f13aa4949, type: 2}
     - target: {fileID: 1123723836500403555, guid: c55f7f3e058ddff42ba7832d6c8af4fa,
         type: 3}
       propertyPath: isMap
@@ -216,7 +216,7 @@ PrefabInstance:
     - target: {fileID: 2496249146663585500, guid: c55f7f3e058ddff42ba7832d6c8af4fa,
         type: 3}
       propertyPath: positionOffset.z
-      value: -0.14
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 2660067020209477043, guid: c55f7f3e058ddff42ba7832d6c8af4fa,
         type: 3}
@@ -1003,6 +1003,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 0}
+  playerXR: {fileID: 0}
+  latestCheckpoint: {fileID: 0}
 --- !u!1 &7838604029854717052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 430285557680239484, guid: ce5c2251d70caf148bbad13bb99ebf54,
