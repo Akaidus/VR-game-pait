@@ -9,8 +9,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class MemoryForce : MonoBehaviour
 {
     [SerializeField] InputActionProperty RecallAction;
-
-    [HideInInspector] public bool handOccupied;
+    
+    bool handOccupied;
+    [HideInInspector] public bool isGrabbing;
     bool isRecalling;
     GameObject objectToRecall;
     Recallable recallableObject;
@@ -53,12 +54,12 @@ public class MemoryForce : MonoBehaviour
         float actionValue = RecallAction.action.ReadValue<float>();
         if (actionValue == 1)
         {
-            //collider.enabled = true;
+            isGrabbing = true;
             RecallObject();
         }
         else if (actionValue < 1)
         {
-            //collider.enabled = false;
+            isGrabbing = false;
             if(!objectToRecall) return;
             if(!isRecalling) return;
             recallableObject = objectToRecall.GetComponent<Recallable>();

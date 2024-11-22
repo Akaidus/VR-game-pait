@@ -7,6 +7,7 @@ public class ThrowableSpawner : MonoBehaviour
     [SerializeField] GameObject throwablePrefab;
     Transform playerHand;
     GameObject spawnedThrowable;
+    float spawnCooldown;
 
     void SpawnThrowable()
     {
@@ -15,10 +16,10 @@ public class ThrowableSpawner : MonoBehaviour
         spawnedThrowable = Instantiate(throwablePrefab, playerHand.position, Quaternion.identity);
     }
     
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if(!other.CompareTag("PlayerHand")) return;
-        if(!other.GetComponent<MemoryForce>().handOccupied) return;
+        if(!other.GetComponent<MemoryForce>().isGrabbing) return;
         playerHand = other.transform;
         SpawnThrowable();
     }
