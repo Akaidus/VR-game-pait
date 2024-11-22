@@ -1,31 +1,19 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    // Start is called before the first frame update
+    int currentSceneIndex;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(1);
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        SceneManager.LoadScene(1);
+        if(other.CompareTag("Player") || other.CompareTag("PlayerHand"))
+            SceneManager.LoadScene(currentSceneIndex++);
     }
 }
