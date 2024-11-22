@@ -5,6 +5,8 @@ using UnityEngine;
 public class TargetHitReward : MonoBehaviour
 {
     [SerializeField] GameObject reward;
+
+    [SerializeField] bool isRewardDisappear;
     [SerializeField] Target[] targets;
     bool allTargetsHit;
     int hitCount;
@@ -13,7 +15,7 @@ public class TargetHitReward : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        reward.SetActive(false);
+        reward.SetActive(isRewardDisappear);
     }
 
     // Update is called once per frame
@@ -42,7 +44,7 @@ public class TargetHitReward : MonoBehaviour
     void DispenseReward()
     {
         if(hasDispensedReward) return;
-        reward.SetActive(true);
+        reward.SetActive(!isRewardDisappear);
         allTargetsHit = true;
         hasDispensedReward = true;
     }

@@ -102,8 +102,11 @@ public class Bounceable : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        audioSource.pitch = Random.Range(minPitch, maxPitch);
-        audioSource.Play();
+        if (audioSource)
+        {
+            audioSource.pitch = Random.Range(minPitch, maxPitch);
+            audioSource.Play();
+        }
         if (isCaptureDevice && containsCapture && readyToSummon)
         {
             SummonCapture();

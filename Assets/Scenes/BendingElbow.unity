@@ -811,6 +811,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hard_BendingElbow
       objectReference: {fileID: 0}
+    - target: {fileID: 7870958999640436171, guid: 30f4372dc0f48e2429fd24a6a9d07a54,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

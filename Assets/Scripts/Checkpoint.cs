@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
@@ -6,10 +7,19 @@ public class Checkpoint : MonoBehaviour
     [SerializeField] MeshRenderer flag;
     [SerializeField] MeshRenderer button;
     [SerializeField] Material newColor;
+    AudioSource audioSource;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if(isCollected) return;
+        if (other.CompareTag("Player") || other.CompareTag("PlayerHand"))
         {
+            audioSource.Play();
             print("checkpoint collected");
             Material[] newFlag = flag.materials;
             Material[] newButton = button.materials;
