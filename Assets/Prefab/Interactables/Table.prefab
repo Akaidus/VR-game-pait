@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7d7844bee61e34c8292b4a95103eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwablePrefab: {fileID: 7139537296983769366, guid: dfc7234c0dd074b4e9dad3f2e412af28,
+  throwablePrefab: {fileID: 9024494721867553075, guid: c2719d8d2fd9a8545ac99e4a9924ee19,
     type: 3}
 --- !u!1001 &2539010417339240596
 PrefabInstance:
