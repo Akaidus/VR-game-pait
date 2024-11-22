@@ -535,7 +535,7 @@ PrefabInstance:
     - target: {fileID: 7916296338950772579, guid: e260dc1b83c0f644b9247b3e14557036,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -604,11 +604,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hard_RaisedArms
-      objectReference: {fileID: 0}
-    - target: {fileID: 6200415213088229433, guid: 894f32a6243e31540bce006eb0d43122,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
