@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: {fileID: 259990897579544088}
+  isRewardDisappear: 0
   targets:
   - {fileID: 3543800941556945320}
 --- !u!1 &2942922388438340792
@@ -274,6 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: {fileID: 717059945444669084}
+  isRewardDisappear: 0
   targets:
   - {fileID: 1303654249000063579}
 --- !u!1 &5578096556746373855
@@ -325,6 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: {fileID: 4518467463638007513}
+  isRewardDisappear: 0
   targets:
   - {fileID: 3090078337115570637}
 --- !u!1 &7955639425755726009
@@ -4573,6 +4576,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f9d5c0368b21d5743baf3295b6ec87f8, type: 2}
+    - target: {fileID: 5564741621381627104, guid: d19cde5e2495949d097a7f4dd06f79ac,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 35dbc04e4e92e2f4e88b7cbd8784d747, type: 2}
     - target: {fileID: 5832961212614599273, guid: d19cde5e2495949d097a7f4dd06f79ac,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8142,6 +8150,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f9d5c0368b21d5743baf3295b6ec87f8, type: 2}
+    - target: {fileID: 5564741621381627104, guid: d19cde5e2495949d097a7f4dd06f79ac,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 35dbc04e4e92e2f4e88b7cbd8784d747, type: 2}
     - target: {fileID: 5832961212614599273, guid: d19cde5e2495949d097a7f4dd06f79ac,
         type: 3}
       propertyPath: m_LocalPosition.x
