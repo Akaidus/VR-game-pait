@@ -12,5 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88251b46b48e7d04d88cee459f2830e0, type: 3}
   m_Name: Radio Station
   m_EditorClassIdentifier: 
-  allSongs: []
+  allSongs:
+  - {fileID: 8300000, guid: 236786b4003e01b40b831121abc835c1, type: 3}
+  - {fileID: 8300000, guid: 88764502a5b93194c8ced92fb114e249, type: 3}
+  - {fileID: 8300000, guid: 258df3ec5839045488307ba751409824, type: 3}
+  - {fileID: 8300000, guid: ad6f622504abe77439aa6a3270816bd3, type: 3}
+  - {fileID: 8300000, guid: 244d78fc8f2f2ee4abddc05b1e466323, type: 3}
+  - {fileID: 8300000, guid: aebf0975c32bfe14884e58d6d479703b, type: 3}
+  - {fileID: 8300000, guid: 5cf4d6f081f76e4469bb13b28e7319f0, type: 3}
+  - {fileID: 8300000, guid: 5f06e8f5585c8f548b2d72e0f6528507, type: 3}
+  - {fileID: 8300000, guid: 2776a75f25fc0c7459725713c55dc8d6, type: 3}
+  - {fileID: 8300000, guid: 23e088ff21c31e24ba079c4553b205c1, type: 3}
+  - {fileID: 8300000, guid: 3117be8faff1f1e45842911232cffcc7, type: 3}
+  - {fileID: 8300000, guid: 35c785c0d8dca7b4cba3dc0ded4d44e3, type: 3}
+  - {fileID: 8300000, guid: c2e838de95df0eb4eaf0d1d5ee7dd645, type: 3}
+  - {fileID: 8300000, guid: 283f83b788101e745bab0ef71c7f608b, type: 3}
+  - {fileID: 8300000, guid: 2c026f67937b5374c9e72fc71d4a32e8, type: 3}
+  - {fileID: 8300000, guid: c2534f7ff35a2dc4fb69d5eed8be0140, type: 3}
   rememberedSong: 3
