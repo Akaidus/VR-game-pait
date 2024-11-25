@@ -29,4 +29,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 283f83b788101e745bab0ef71c7f608b, type: 3}
   - {fileID: 8300000, guid: 2c026f67937b5374c9e72fc71d4a32e8, type: 3}
   - {fileID: 8300000, guid: c2534f7ff35a2dc4fb69d5eed8be0140, type: 3}
+  - {fileID: 8300000, guid: 43131d8a6621dcc4e957bf16bd41abc2, type: 3}
+  - {fileID: 8300000, guid: c3799ab4a453fec468e9cfcf2e21968d, type: 3}
+  - {fileID: 8300000, guid: 8047064b5f896964e9529e359e985728, type: 3}
+  - {fileID: 8300000, guid: 7a3c34a9c05294d4eabf3d9ae9479e0a, type: 3}
+  - {fileID: 8300000, guid: 1bb2d86b5a24acf4690c45ccdc9b3e3a, type: 3}
+  - {fileID: 8300000, guid: 2994c2cdf6cef814bb74538df667b68d, type: 3}
+  - {fileID: 8300000, guid: 8c0807f36eafde642bbd6813e2aa0fce, type: 3}
+  - {fileID: 8300000, guid: 1ac38d062a0a9684dbe7ced0e0bafc48, type: 3}
   rememberedSong: 3
