@@ -21,6 +21,7 @@ namespace RadioWork
 
         private void Awake()
         {
+            Debug.Log("Started waking radio station");
             if (instance != null) Destroy(this);
             instance = this;
 
@@ -40,6 +41,7 @@ namespace RadioWork
                 isPlayingSong[i] = false;
                 songProgress[i] = 0;
             }
+            Debug.Log("Station fully awoken");
         }
     }
 }

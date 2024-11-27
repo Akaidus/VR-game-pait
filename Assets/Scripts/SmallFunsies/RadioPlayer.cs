@@ -11,9 +11,21 @@ public class RadioPlayer : MonoBehaviour
 
     [HideInInspector] public bool songTracker = false;
 
+    private bool delayUntilAfterStation = true;
+
     private void OnEnable()
     {
-        radioStation.AddListener(this);
+        Debug.Log($"Enabling radioplayer {name}");
+        if (!delayUntilAfterStation) radioStation.AddListener(this);
+    }
+
+    private void Start()
+    {
+        if (delayUntilAfterStation)
+        {
+            radioStation.AddListener(this);
+            delayUntilAfterStation = false;
+        }
     }
 
     private void OnDisable()
