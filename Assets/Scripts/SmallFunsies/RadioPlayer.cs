@@ -5,9 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class RadioPlayer : MonoBehaviour
 {
-    [SerializeField] private RadioTracker radioStation;
+    [SerializeField] private RadioTower radioStation;
 
-    private AudioSource audioPlayer;
+    [HideInInspector] public AudioSource audioPlayer;
 
     [HideInInspector] public bool songTracker = false;
 
