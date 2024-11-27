@@ -12,7 +12,7 @@ public class Follow : MonoBehaviour
     [SerializeField] bool followOnlyYRotation;
     [SerializeField] Vector3 rotationOffset;
 
-    void LateUpdate()
+    void Update()
     {
         if(followPosition && !isMap)
             transform.position = targetToFollow.position + positionOffset;
