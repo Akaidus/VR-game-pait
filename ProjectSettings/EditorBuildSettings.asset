@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Levels/Level_3_Hard.unity
     guid: e57383af85e7550459928cc2c01924d5
+  - enabled: 1
+    path: Assets/Scenes/Game Levels/End.unity
+    guid: 43d65485a39370d49bb27aecddb2f40d
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9922f8935409ee643b33d1d6fbcc97e1,
       type: 2}
