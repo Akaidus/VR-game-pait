@@ -88,10 +88,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 95facc5d281b449c5ac9f2230bb3a2d2,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5120016894123397292}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 95facc5d281b449c5ac9f2230bb3a2d2,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3824111332258622355}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 95facc5d281b449c5ac9f2230bb3a2d2,
         type: 3}
@@ -109,6 +105,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 737276281849955190}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 95facc5d281b449c5ac9f2230bb3a2d2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5120016894123397292}
   m_SourcePrefab: {fileID: 100100000, guid: 95facc5d281b449c5ac9f2230bb3a2d2, type: 3}
 --- !u!1 &8159216871964549797 stripped
 GameObject:
@@ -162,19 +162,6 @@ CapsuleCollider:
   m_Height: 2.1
   m_Direction: 1
   m_Center: {x: 0.4, y: 1, z: 0}
---- !u!114 &5120016894123397292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8159216871964549797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a3df7b827ee74f4d9fed6bcc24726ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slipPercentage: 0
 --- !u!65 &3824111332258622355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -280,3 +267,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8, y: 0.15, z: 0.15}
   m_Center: {x: 0, y: 1.815, z: 0}
+--- !u!114 &5120016894123397292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8159216871964549797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a3df7b827ee74f4d9fed6bcc24726ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slipPercentage: 0
