@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using RadioWork;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "Radio Station", menuName = "CustomSO/Radio Station")]
 public class RadioTower : ScriptableObject
 {
-    [SerializeField] public RadioStation theStation; // Saves certain data between scenes, though not between gameplay sessions
     [SerializeField] public int assignedStation = -1;
 
     [SerializeField] private AudioClip[] allSongs;
@@ -26,14 +26,17 @@ public class RadioTower : ScriptableObject
 
         radios.Add(player);
 
+        //Debug.Log("New listener is joining in");
+
         // If radio has started
-        if (theStation.isPlayingSong[assignedStation])
+        if (RadioStation.instance.isPlayingSong[assignedStation])
         {
             // Load song that was playing
-            player.audioPlayer.clip = allSongs[theStation.lastSong[assignedStation][theStation.lastSong[assignedStation].Count - 1]];
+            player.audioPlayer.clip = allSongs[RadioStation.instance.lastSong[assignedStation][RadioStation.instance.lastSong[assignedStation].Count - 1]];
             // Load time to play from
+            //Debug.Log($"This listener is continuing from {(trackedRadio >= 0 ? $"a preexisting radio at {radios[trackedRadio].audioPlayer.time}" : $"the radio station at {RadioStation.instance.songProgress[assignedStation]}")}");
             if (trackedRadio >= 0) player.audioPlayer.time = radios[trackedRadio].audioPlayer.time;
-            else player.audioPlayer.time = theStation.songProgress[assignedStation];
+            else player.audioPlayer.time = RadioStation.instance.songProgress[assignedStation];
             // Play song
             player.audioPlayer.Play();
         }
@@ -52,7 +55,8 @@ public class RadioTower : ScriptableObject
 
         if (!setNewTracker) return;
         trackedRadio = -1;
-        theStation.songProgress[assignedStation] = player.audioPlayer.time; // Remember current song progress if this is a scene unload basically
+        //Debug.Log($"Remembering time of {player.audioPlayer.time}");
+        if (player.audioPlayer.time > 0.2f) RadioStation.instance.songProgress[assignedStation] = player.audioPlayer.time; // Remember current song progress if this is a scene unload basically
         if (radios.Count == 0) return;
         trackedRadio = 0;
         radios[trackedRadio].songTracker = true;
@@ -60,17 +64,17 @@ public class RadioTower : ScriptableObject
 
     public void RadioStartup()
     {
-        theStation.isPlayingSong[assignedStation] = true;
+        RadioStation.instance.isPlayingSong[assignedStation] = true;
         QueueSong();
     }
 
     public void QueueSong()
     {
-        int nextSong = Random.Range(0, allSongs.Length - theStation.lastSong[assignedStation].Count);
+        int nextSong = Random.Range(0, allSongs.Length - RadioStation.instance.lastSong[assignedStation].Count);
 
-        for (int i = 0; i < theStation.lastSong[assignedStation].Count; i++)
+        for (int i = 0; i < RadioStation.instance.lastSong[assignedStation].Count; i++)
         {
-            if (nextSong >= theStation.lastSong[assignedStation][i]) nextSong++;
+            if (nextSong >= RadioStation.instance.lastSong[assignedStation][i]) nextSong++;
         }
 
         foreach (RadioPlayer player in radios)
@@ -78,8 +82,8 @@ public class RadioTower : ScriptableObject
             player.PlaySong(allSongs[nextSong]);
         }
 
-        theStation.lastSong[assignedStation].Add(nextSong);
+        RadioStation.instance.lastSong[assignedStation].Add(nextSong);
 
-        if (theStation.lastSong[assignedStation].Count > rememberedSongs) theStation.lastSong[assignedStation].RemoveAt(0);
+        if (RadioStation.instance.lastSong[assignedStation].Count > rememberedSongs) RadioStation.instance.lastSong[assignedStation].RemoveAt(0);
     }
 }

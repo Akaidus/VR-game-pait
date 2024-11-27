@@ -15,7 +15,6 @@ public class RadioPlayer : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log($"Enabling radioplayer {name}");
         if (!delayUntilAfterStation) radioStation.AddListener(this);
     }
 
