@@ -604,6 +604,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 430285556866155483, guid: ce5c2251d70caf148bbad13bb99ebf54,
         type: 3}
+      propertyPath: m_Radius
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 430285556866155483, guid: ce5c2251d70caf148bbad13bb99ebf54,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 430285556866155483, guid: ce5c2251d70caf148bbad13bb99ebf54,
+        type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 704
       objectReference: {fileID: 0}
@@ -791,6 +801,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 430285557946750771, guid: ce5c2251d70caf148bbad13bb99ebf54,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 430285557946750771, guid: ce5c2251d70caf148bbad13bb99ebf54,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 430285557946750772, guid: ce5c2251d70caf148bbad13bb99ebf54,
         type: 3}
