@@ -6,8 +6,8 @@ using RadioWork;
 [CreateAssetMenu(fileName = "Radio Station", menuName = "CustomSO/Radio Station")]
 public class RadioTower : ScriptableObject
 {
-    [HideInInspector] public RadioStation theStation; // Saves certain data between scenes, though not between gameplay sessions
-    [HideInInspector] public int assignedStation = -1;
+    [SerializeField] public RadioStation theStation; // Saves certain data between scenes, though not between gameplay sessions
+    [SerializeField] public int assignedStation = -1;
 
     [SerializeField] private AudioClip[] allSongs;
     private List<RadioPlayer> radios = new List<RadioPlayer>();
