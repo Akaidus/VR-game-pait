@@ -12,6 +12,7 @@ TagManager:
   - Ground
   - Wall
   - RecorderCam
+  - CamRecord
   layers:
   - Default
   - TransparentFX
