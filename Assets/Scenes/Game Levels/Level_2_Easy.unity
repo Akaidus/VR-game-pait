@@ -130,10 +130,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1303654249000063579, guid: 2dbcde526d7554c4497a6f8e9d872a12,
+        type: 3}
+      propertyPath: isHit
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3199769994393175828, guid: 2dbcde526d7554c4497a6f8e9d872a12,
         type: 3}
       propertyPath: m_Name
       value: Easy_BendingElbow
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620283200884918839, guid: 2dbcde526d7554c4497a6f8e9d872a12,
+        type: 3}
+      propertyPath: isCollected
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4165913560629430214, guid: 2dbcde526d7554c4497a6f8e9d872a12,
         type: 3}
@@ -324,8 +334,61 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7838604029455857141, guid: 72a2d629328be994e8ab9d28e4eb851b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1349558915}
   m_SourcePrefab: {fileID: 100100000, guid: 72a2d629328be994e8ab9d28e4eb851b, type: 3}
+--- !u!1 &1349558914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7838604029455857141, guid: 72a2d629328be994e8ab9d28e4eb851b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1349558913}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1349558915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349558914}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bf296fc962d7184ab14ad1841598d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_System: {fileID: 0}
+  m_MoveSpeed: 1
+  m_EnableStrafe: 1
+  m_EnableFly: 0
+  m_UseGravity: 1
+  m_GravityApplicationMode: 0
+  m_ForwardSource: {fileID: 0}
+  m_LeftHandMoveAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Left Hand Move
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: b27f81ba-8a86-44b7-b4d6-f2fc65bafe2d
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_RightHandMoveAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Right Hand Move
+      m_Type: 0
+      m_ExpectedControlType: Vector2
+      m_Id: 159a0e3b-e9bc-498b-83b6-d14eed719d2e
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!1 &1406680010
 GameObject:
   m_ObjectHideFlags: 0
